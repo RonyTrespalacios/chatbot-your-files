@@ -44,7 +44,7 @@ npm i
 
 When developing a project in Supabase, you can choose to develop locally or directly on the cloud.
 
-1. Start a local version of Supabase _(runs in Docker)_.
+1. Start a local version of Supabase _(runs in Docker)_. This will start the supabase at 54323 port.
 
    ```shell
    npx supabase start
