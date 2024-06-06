@@ -30,7 +30,7 @@ This repository includes 3 sample markdown files that we'll use to test the app:
 
 
 
-### `Step 1` - Storage
+### `Step 1` - Install dependencies
 
 #### Install dependencies
 
@@ -101,7 +101,7 @@ When developing a project in Supabase, you can choose to develop locally or dire
     npx supabase functions deploy
     ```
 
-1.  Apply the migration to our local database.
+1.  How to apply the migration to our local database.
 
     ```bash
     npx supabase migration up
@@ -113,7 +113,7 @@ When developing a project in Supabase, you can choose to develop locally or dire
     npx supabase db push
     ```
 
-1.  Install dependencies
+1.  Install frontend dependencies
 
     ```bash
     npm i @xenova/transformers ai
@@ -121,7 +121,7 @@ When developing a project in Supabase, you can choose to develop locally or dire
 
     We'll use [Transformers.js](https://github.com/xenova/transformers.js) to perform inference directly in the browser.
 
-1.  First generate an API key from [OpenAI](https://platform.openai.com/account/api-keys) and save it in `supabase/functions/.env`.
+1.  Generate an API key from [OpenAI](https://platform.openai.com/account/api-keys) and save it in `supabase/functions/.env`.
 
     ```bash
     cat > supabase/functions/.env <<- EOF
