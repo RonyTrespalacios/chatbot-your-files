@@ -6,15 +6,13 @@ This project was originally forked from [supabase-community/chatgpt-your-files](
 
 ## 💽 Clone
 
-1. **Clone repo:** Clone this repo at tag `step-1`:
+1. **Clone repo:** Clone this repo:
 
    ```shell
    git clone https://github.com/RonyTrespalacios/chatbot-your-files.git
    ```
 
    This will automatically clone our starting point.
-
-1. **Step-by-step guide:** These steps are written out line-by-line. Feel free to follow along using the [steps below](#step-by-step).
 
 ## 🧱 Pre-req’s
 
