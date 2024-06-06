@@ -31,6 +31,98 @@ This repository includes 3 sample markdown files that we'll use to test the app:
 
 [`./sample-files/file3.md`](./sample-files/file3.md)
 
+<details>
+
+<summary><strong>Step 0 - Setup</strong> <em>(Optional)</em></summary>
+
+### `Step 0` - Setup
+
+1. Create the droplet in digital ocean.
+
+   ```bash
+   ssh root@your-ip
+   ```
+
+1. Create a new user.
+
+   ```bash
+   adduser username
+   ```
+   ```bash
+   usermod -aG sudo username
+   ```
+   ```bash
+   su username
+   ```
+
+1. Go to /home/username/
+
+   ```bash
+   cd ~
+   ```
+
+1. Now you can clone the repo
+
+   ```bash
+   git clone https://github.com/RonyTrespalacios/chatbot-your-files.git
+   ```
+
+1. Basic setup:
+
+Install npm
+   ```bash
+   sudo apt-get install npm
+   ```
+
+Install HomeBrew
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+   ```bash
+   echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.profile
+   ```
+   ```bash
+   source ~/.profile
+   ```
+   ```bash
+   cd chatbot-your-files/
+   ```
+
+Install Deno
+   ```bash
+   brew install deno
+   ```
+
+Install Docker
+   ```bash
+   sudo apt update
+   sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+   ```
+   ```bash
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   ```
+   ```bash
+   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+   ```bash
+   sudo apt-get update
+   sudo apt-get install docker-ce docker-ce-cli containerd.io
+   ```
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
+Verify Docker and Deno are installed
+   ```bash
+   deno --version
+   docker --version
+   ```
+
+Start supabase, make sure you are in ~/chatbot-your-files
+   ```bash
+   npx supabase start
+   ```
+
+</details>
 
 
 
