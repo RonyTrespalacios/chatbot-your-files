@@ -77,6 +77,12 @@ When developing a project in Supabase, you can choose to develop locally or dire
     npx supabase functions deploy
     ```
 
+1.  If you want to reset your supabase local data.
+
+    ```bash
+    npx supabase db reset
+    ```
+
 1.  How to apply the migration to our local database.
 
     ```bash
