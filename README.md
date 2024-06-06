@@ -117,11 +117,6 @@ Verify Docker and Deno are installed
    docker --version
    ```
 
-Start supabase, make sure you are in ~/chatbot-your-files
-   ```bash
-   npx supabase start
-   ```
-
 </details>
 
 
