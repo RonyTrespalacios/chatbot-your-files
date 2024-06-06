@@ -59,34 +59,6 @@ When developing a project in Supabase, you can choose to develop locally or dire
        grep NEXT_PUBLIC > .env.local
    ```
 
-1.  First let's note how dependencies are resolved using an import map - `./supabase/functions/import_map.json`.
-
-    Import maps aren't required in Deno, but they can simplify imports and keep dependency versions consistent. All of our dependencies come from NPM, but since we're using Deno we fetch them from a CDN like https://esm.sh or https://cdn.jsdelivr.net.
-
-    ```json
-    {
-      "imports": {
-        "@std/": "https://deno.land/std@0.168.0/",
-
-        "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.21.0",
-        "openai": "https://esm.sh/openai@4.10.0",
-        "common-tags": "https://esm.sh/common-tags@1.8.2",
-        "ai": "https://esm.sh/ai@2.2.13",
-
-        "mdast-util-from-markdown": "https://esm.sh/mdast-util-from-markdown@2.0.0",
-        "mdast-util-to-markdown": "https://esm.sh/mdast-util-to-markdown@2.1.0",
-        "mdast-util-to-string": "https://esm.sh/mdast-util-to-string@4.0.0",
-        "unist-builder": "https://esm.sh/unist-builder@4.0.0",
-        "mdast": "https://esm.sh/v132/@types/mdast@4.0.0/index.d.ts",
-
-        "https://esm.sh/v132/decode-named-character-reference@1.0.2/esnext/decode-named-character-reference.mjs": "https://esm.sh/decode-named-character-reference@1.0.2?target=deno"
-      }
-    }
-    ```
-
-    _Note: URL based imports and import maps aren't a Deno invention. These are a [web standard](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap) that Deno follows as closely as possible._
-
-
 1.  If developing locally, open a new terminal and serve the edge functions.
 
     ```bash
@@ -128,6 +100,13 @@ When developing a project in Supabase, you can choose to develop locally or dire
     OPENAI_API_KEY=<your-api-key>
     EOF
     ```
+
+1.  Run frontend at 3000 port.
+
+    ```bash
+    npm run dev
+    ```
+
 ## 🔗 Supabase Vector resources
 
 - [Supabase AI & Vector](https://supabase.com/docs/guides/ai)
