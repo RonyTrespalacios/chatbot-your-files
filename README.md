@@ -1,5 +1,11 @@
 <h1 align="center">Chatbot Your Files - Repo</h1>
 
+1. **## Original Repository** :
+
+This project was originally forked from [supabase-community/chatgpt-your-files](https://github.com/supabase-community/chatgpt-your-files).
+
+## 💽 Clone
+
 1. **Clone repo:** Clone this repo at tag `step-1`:
 
    ```shell
