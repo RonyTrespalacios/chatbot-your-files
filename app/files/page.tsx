@@ -6,6 +6,7 @@ import { Database } from '@/supabase/functions/_lib/database';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
+import { v4 as uuidv4 } from 'uuid'; // Importing the uuid function
 
 export default function FilesPage() {
   const supabase = createClientComponentClient<Database>();
@@ -41,7 +42,7 @@ export default function FilesPage() {
               const { error } = await supabase.storage
                 .from('files')
                 .upload(
-                  `${crypto.randomUUID()}/${selectedFile.name}`,
+                  `${uuidv4()}/${selectedFile.name}`, // Using uuidv4 instead of crypto.randomUUID()
                   selectedFile
                 );
 
@@ -63,6 +64,7 @@ export default function FilesPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
           {documents.map((document) => (
             <div
+              key={document.id}
               className="flex flex-col gap-2 justify-center items-center border rounded-md p-4 sm:p-6 text-center overflow-hidden cursor-pointer hover:bg-slate-100"
               onClick={async () => {
                 if (!document.storage_object_path) {

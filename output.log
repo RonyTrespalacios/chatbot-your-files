@@ -1,0 +1,19 @@
+nohup: ignoring input
+
+> dev
+> next dev
+
+  ▲ Next.js 13.5.4
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+  - Experiments (use at your own risk):
+     · serverActions
+
+ ✓ Ready in 2.8s
+ ✓ Compiled /middleware in 811ms (192 modules)
+ ○ Compiling /page ...
+ ✓ Compiled /page in 4.5s (847 modules)
+
+ ⚠ metadata.metadataBase is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ ✓ Compiled in 747ms (317 modules)
+ ✓ Compiled /favicon.ico/route in 1593ms (863 modules)

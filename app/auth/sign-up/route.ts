@@ -11,28 +11,28 @@ export async function POST(request: Request) {
   const password = String(formData.get('password'));
   const supabase = createRouteHandlerClient({ cookies });
 
+  const origin = 'http://137.184.124.184:3000';
+
   const { error } = await supabase.auth.signUp({
     email,
     password,
     options: {
-      emailRedirectTo: `${requestUrl.origin}/auth/callback`,
+      emailRedirectTo: `${origin}/auth/callback`,
     },
   });
 
   if (error) {
     return NextResponse.redirect(
-      `${requestUrl.origin}/login?error=Could not authenticate user`,
+      `${origin}/login?error=Could not authenticate user`,
       {
-        // a 301 status is required to redirect from a POST to a GET route
         status: 301,
       }
     );
   }
 
   return NextResponse.redirect(
-    `${requestUrl.origin}/login?message=Check email to continue sign in process`,
+    `${origin}/login?message=Check email to continue sign in process`,
     {
-      // a 301 status is required to redirect from a POST to a GET route
       status: 301,
     }
   );

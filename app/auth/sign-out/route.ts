@@ -5,13 +5,14 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  const requestUrl = new URL(request.url);
   const supabase = createRouteHandlerClient({ cookies });
 
   await supabase.auth.signOut();
 
-  return NextResponse.redirect(`${requestUrl.origin}/login`, {
-    // a 301 status is required to redirect from a POST to a GET route
+  // Fixed URL to redirect to after sign-out process completes
+  const origin = 'http://137.184.124.184:3000';
+
+  return NextResponse.redirect(`${origin}/login`, {
     status: 301,
   });
 }
