@@ -133,17 +133,24 @@ First install NPM dependencies.
 npm i
 ```
 
-1.  Install frontend dependencies
-
-    ```bash
-    npm i @xenova/transformers ai
-    ```
-
-    We'll use [Transformers.js](https://github.com/xenova/transformers.js) to perform inference directly in the browser.
-
 #### Setup Supabase stack
 
 When developing a project in Supabase, you can choose to develop locally or directly on the cloud.
+
+1. Start supabase
+
+   ```bash
+   npx supabase start
+   ```
+
+1. Store the Supabase URL & public anon key in `.env.local` for Next.js.
+
+   ```bash
+   npx supabase status -o env \
+     --override-name api.url=NEXT_PUBLIC_SUPABASE_URL \
+     --override-name auth.anon_key=NEXT_PUBLIC_SUPABASE_ANON_KEY |
+       grep NEXT_PUBLIC > .env.local
+   ```
 
 1. In order to develop Supabase directly on the cloud:
 
@@ -169,6 +176,17 @@ When developing a project in Supabase, you can choose to develop locally or dire
     ```bash
     npx supabase functions deploy
     ```
+
+1.  If you are developing directly on the cloud, open up the [SQL Editor](https://supabase.com/dashboard/project/_/sql/new) and set this to your Supabase project's API URL:
+
+    ```sql
+    select vault.create_secret(
+      '<api-url>',
+      'supabase_url'
+    );
+    ```
+
+    You can get the project API URL from the [API settings page](https://supabase.com/dashboard/project/_/settings/api).
 
 #### Open AI API Key
 
